@@ -28,7 +28,7 @@ public class IntegerInfo {
 	    // Enter the user-input validation loop.
 	    do {
 		// Prompt for an integer between 1-100.
-		System.out.printf("%nEnter an integer (1-100): ", userName);
+		System.out.printf("%nEnter an integer (1-100): ");
 		userNum = scnr.nextLine();
 		validInput = validator(userNum);
 	    } while (!validInput);
