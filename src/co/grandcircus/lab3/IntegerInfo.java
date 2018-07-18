@@ -39,9 +39,8 @@ public class IntegerInfo {
 	     */
 	    output = integerInfoRetriever(Integer.parseInt(userNum));
 	    System.out.printf("%nI have been trained in your Jedi Arts, "
-		    + "General %s!%nThe number you chose (%s) is %s!!%n",
+		    + "General %s!%nThe correct output is: %s!!%n",
 		    userName,
-		    userNum,
 		    output);
 	    
 	    // Prompt the user to officially end the program (exit the loop).
@@ -73,25 +72,16 @@ public class IntegerInfo {
      * appropriate output based on the lab's parameters.
      */
     private static String integerInfoRetriever(int userNum) {
-	
-	if (userNum % 2 == 0) {
-	    // number is even
-	    if (userNum < 25) {
-		// number is even and less than 25
-		return "even and less than 25";
-	    } else {
-		// number is even but not less than 25
-		return "even";
-	    }
+	if (userNum % 2 == 0 && userNum < 25) {
+	    return "even and less than 25";
+	} else if (userNum % 2 == 0 && userNum <= 60) {
+	    return "even";
+	} else if (userNum % 2 == 0) {
+	    return "" + userNum + " is even";
+	} else if (userNum % 2 != 0 && userNum >  60) {
+	    return "" + userNum + " is odd and over 60";
 	} else {
-	    // number is odd
-	    if (userNum > 60) {
-		// number is odd and over 60
-		return "odd and over 60";
-	    } else {
-		// number is odd but not over 60
-		return "odd";
-	    }
+	    return "" + userNum + " is odd";
 	}
 	
     }
