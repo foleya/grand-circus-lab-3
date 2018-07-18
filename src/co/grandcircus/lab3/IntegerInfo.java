@@ -21,12 +21,14 @@ public class IntegerInfo {
 	    // Prompt for the user's Name.
 	    System.out.print("Hello there. What is your name? ");
 	    userName = scnr.nextLine();
-
-	    // Prompt for an integer.
-	    System.out.printf("%nGeneral %s! Enter an integer (1-100): ", userName);
 	    
+	    // Greet the user.
+	    System.out.printf("%nGeneral %s!", userName);
+
 	    // Enter the user-input validation loop.
 	    do {
+		// Prompt for an integer between 1-100.
+		System.out.printf("%nEnter an integer (1-100): ", userName);
 		userNum = scnr.nextLine();
 		validInput = validator(userNum);
 	    } while (!validInput);
@@ -36,8 +38,8 @@ public class IntegerInfo {
 	     * then retrieve the appropriate output and print it.
 	     */
 	    output = integerInfoRetriever(Integer.parseInt(userNum));
-	    System.out.printf("%nFool! I have been trained in your Jedi Arts, "
-		    + "General %s!%nThe number you chose (%s) is %s!!!%n",
+	    System.out.printf("%nI have been trained in your Jedi Arts, "
+		    + "General %s!%nThe number you chose (%s) is %s!!%n",
 		    userName,
 		    userNum,
 		    output);
@@ -60,7 +62,7 @@ public class IntegerInfo {
 	if (userNum.matches("^[1-9][0-9]?$|^100$")) {
 	    return true;
 	} else {
-	    System.out.printf("%n--Fool! You must enter a positive integer between 1 and 100--" +
+	    System.out.printf("%n--Fool! This input is invalid--" +
 		    	      "%nPlease try again: ");
 	    return false;
 	}
